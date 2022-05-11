@@ -20,21 +20,20 @@ public class GameUI extends PApplet {
 
     public void draw() {
 
-
         background(0);
+        drawMatch();
 
+    }
 
-        //text(n1.getRows(), 500, 500);
-        System.out.println(n1.getRows());
-
+    public void drawMatch() {
         for (int i = 1; i < n1.getRows().length; i++) {
             fill(251, 191, 119);
             rect(xPosRect, yPosRect, 10, 100);
             fill(255);
             ellipse(xPosEllipse, yPosEllipse, 10, 20);
 
-            xPosRect += 100;
-            xPosEllipse += 100;
+            xPosRect += 1;
+            xPosEllipse += 1;
         }
     }
 
