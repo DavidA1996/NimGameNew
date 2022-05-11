@@ -22,19 +22,40 @@ public class GameUI extends PApplet {
 
         background(0);
         drawMatch();
+        noLoop();
 
     }
 
+
     public void drawMatch() {
-        for (int i = 1; i < n1.getRows().length; i++) {
+        for (int i = 0; i < n1.getRows().length; i++) {
             fill(251, 191, 119);
             rect(xPosRect, yPosRect, 10, 100);
             fill(255);
             ellipse(xPosEllipse, yPosEllipse, 10, 20);
 
-            xPosRect += 1;
-            xPosEllipse += 1;
+
+            for (int j = 0; j < n1.getRows()[i]; j++) {
+                fill(251, 191, 119);
+                rect(xPosRect, yPosRect, 10, 100);
+                fill(255);
+                ellipse(xPosEllipse, yPosEllipse, 10, 20);
+
+                xPosRect += 100;
+                xPosEllipse += 100;
+
+            }
+
+            xPosRect = 50;
+            xPosEllipse = 55;
+            yPosRect += 150;
+            yPosEllipse += 150;
         }
+    }
+
+    public void removeMatch() {
+
+        if (mouseX )
     }
 
 }
