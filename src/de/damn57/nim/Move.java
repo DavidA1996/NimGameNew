@@ -1,10 +1,8 @@
-// Den Code bespreche ich ausführlich im Podcast "Herzbergs Hörsaal" in der Episode
+package de.damn57.nim;// Den Code bespreche ich ausführlich im Podcast "Herzbergs Hörsaal" in der Episode
 // https://anchor.fm/dominikusherzberg/episodes/PiS-Das-Nim-Spiel-in-Java-programmiert-edks2t
 //
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
-import java.util.stream.IntStream;
 
 class Move {
     final int row, number;
@@ -91,10 +89,32 @@ class Nim implements NimGame {
     public int[] getRows() {
         return Arrays.copyOf(rows, rows.length);
     }
+
+    /*
+    public void bestMoveNew() {
+        for (int rowIdx = 0; rowIdx < rows.length; rowIdx++) {
+            for (int j = 0; j < rows[rowIdx]; j++) {
+               //if ()
+            }
+
+        }
+    }
+    public void minimax() {
+
+
+    }
+
+     */
+
+
 }
+
+
+
+
 /*
-Nim nim = Nim.of(2,3,4);
-assert nim != nim.play(Move.of(1,2)) : "Return a new Nim instance";
+de.damn57.nim.Nim nim = de.damn57.nim.Nim.of(2,3,4);
+assert nim != nim.play(de.damn57.nim.Move.of(1,2)) : "Return a new de.damn57.nim.Nim instance";
 
 int[] randomSetup(int... maxN) {
     Random r = new Random();
@@ -105,10 +125,10 @@ int[] randomSetup(int... maxN) {
     return rows;
 }
 
-ArrayList<Move> autoplay(NimGame nim) {
-    ArrayList<Move> moves = new ArrayList<>();
+ArrayList<de.damn57.nim.Move> autoplay(de.damn57.nim.NimGame nim) {
+    ArrayList<de.damn57.nim.Move> moves = new ArrayList<>();
     while (!nim.isGameOver()) {
-        Move m = nim.bestMove();
+        de.damn57.nim.Move m = nim.bestMove();
         moves.add(m);
         nim = nim.play(m);
     }
@@ -116,13 +136,13 @@ ArrayList<Move> autoplay(NimGame nim) {
 }
 
 boolean simulateGame(int... maxN) {
-    NimGame nim = Nim.of(randomSetup(maxN));
+    de.damn57.nim.NimGame nim = de.damn57.nim.Nim.of(randomSetup(maxN));
     // System.out.println(nim);
-    // System.out.println((NimGame.isWinning(nim.rows) ? "first" : "second") + " to win"); 
-    ArrayList<Move> moves = autoplay(nim);
+    // System.out.println((de.damn57.nim.NimGame.isWinning(nim.rows) ? "first" : "second") + " to win");
+    ArrayList<de.damn57.nim.Move> moves = autoplay(nim);
     // System.out.println(moves);
-    return (NimGame.isWinning(nim.rows) && (moves.size() % 2) == 1) ||
-           (!NimGame.isWinning(nim.rows) && (moves.size() % 2) == 0); 
+    return (de.damn57.nim.NimGame.isWinning(nim.rows) && (moves.size() % 2) == 1) ||
+           (!de.damn57.nim.NimGame.isWinning(nim.rows) && (moves.size() % 2) == 0);
 }
 
 assert IntStream.range(0,100).allMatch(i -> simulateGame(3,4,5));
@@ -130,7 +150,7 @@ assert IntStream.range(0,100).allMatch(i -> simulateGame(3,4,6,8));
 
 /* // Beispielhaftes Spiel über JShell
 
-jshell> Nim n = Nim.of(2,3,4)
+jshell> de.damn57.nim.Nim n = de.damn57.nim.Nim.of(2,3,4)
 n ==>
 I I
 I I I
@@ -142,7 +162,7 @@ I I
 I I I
 I
 
-jshell> n = n.play(Move.of(2,1))
+jshell> n = n.play(de.damn57.nim.Move.of(2,1))
 n ==>
 I I
 I I I
@@ -154,7 +174,7 @@ I I
 I I
 
 
-jshell> n = n.play(Move.of(1,1))
+jshell> n = n.play(de.damn57.nim.Move.of(1,1))
 n ==>
 I I
 I
@@ -166,7 +186,7 @@ I
 I
 
 
-jshell> n = n.play(Move.of(1,1))
+jshell> n = n.play(de.damn57.nim.Move.of(1,1))
 n ==>
 I
 
